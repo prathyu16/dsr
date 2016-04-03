@@ -737,18 +737,18 @@ void DSRAgent :: flood_compare(Packet *packet)
    hdr_sr *srh =  hdr_sr::access(p.pkt);
 
    int dir;
-   if(srh->sr_coord_.first >> srh->sr_coord_.second)
+   if(srh->sr_coord_.first > srh->sr_coord_.second)
    {
-	if(srh->sr_coord_.first >> srh->sr_coord_.third)
+	if(srh->sr_coord_.first > srh->sr_coord_.third)
         {
-	     if(srh->sr_coord_.first >> srh->sr_coord_.four)
+	     if(srh->sr_coord_.first > srh->sr_coord_.four)
 			dir=1;
 	     else
 			dir=4;
         }
 	else
 	{
-		if(srh->sr_coord_.third >> srh->sr_coord_.four)
+		if(srh->sr_coord_.third > srh->sr_coord_.four)
 			dir=3;
 		else
 			dir=4;
@@ -757,16 +757,16 @@ void DSRAgent :: flood_compare(Packet *packet)
    }
    else
    {
-	if(srh->sr_coord_.second >> srh->sr_coord_.third)
+	if(srh->sr_coord_.second > srh->sr_coord_.third)
 	{
-		if(srh->sr_coord_.second >> srh->sr_coord_.four)
+		if(srh->sr_coord_.second > srh->sr_coord_.four)
 			dir=2;
 		else
 			dir=4;
 	}
 	else
 	{
-		if(srh->sr_coord_.third >> srh->sr_coord_.four)
+		if(srh->sr_coord_.third > srh->sr_coord_.four)
 			dir=3;
 		else
 			dir=4;

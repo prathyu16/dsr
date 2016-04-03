@@ -705,7 +705,7 @@ DSRAgent::coordBcastPkt(Packet *packet)
 
   iph->daddr() = IP_BROADCAST;
   iph->dport() = RT_PORT;
-  iph->saddr() = Address::instance().create_ipaddr(net_id.getNSAddr_(),RT_PORT);
+  //iph->saddr() = Address::instance().create_ipaddr(net_id.getNSAddr_(),RT_PORT);
   iph->sport() = RT_PORT;
   iph->ttl() = 30;
 
