@@ -163,7 +163,7 @@ private:
 	int cur_addr_;
 	struct sr_addr addrs_[MAX_SR_LEN];
 
-	struct coord_packet     sr_coord_;
+	
 	struct route_request	sr_request_;
 	struct route_reply	sr_reply_;
 	struct route_error	sr_error_;
@@ -175,7 +175,8 @@ private:
 	struct flow_default_err sr_fdef_unk;
 
 public:
-       
+
+	struct coord_packet     sr_coord_;       
 	static int offset_;		/* offset for this header */
 	inline int& offset() { return offset_; }
         inline static hdr_sr* access(const Packet* p) {
